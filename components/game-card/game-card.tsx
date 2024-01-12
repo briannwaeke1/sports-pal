@@ -7,15 +7,19 @@ export const GameCard = ({ game }: { game: any }) => {
   const [selectedTeam, setSelectedTeam] = useState<string | null>(null);
 
   return (
-    <Card>
-      <Typography level="h4" sx={{ textAlign: "center" }}>
-        {game.AwayTeamName} @ {game.HomeTeamName}
+    <Card className={styles.card}>
+      <Typography
+        fontSize={14}
+        fontWeight="bold"
+        style={{ textAlign: "center" }}
+      >
+        {game.away.name} @ {game.home.name}
       </Typography>
-      <Button onClick={() => setSelectedTeam(game.AwayTeamName)}>
-        {game.AwayTeamName}
+      <Button onClick={() => setSelectedTeam(game.away.alias)}>
+        {game.away.alias}
       </Button>
-      <Button onClick={() => setSelectedTeam(game.HomeTeamName)}>
-        {game.HomeTeamName}
+      <Button onClick={() => setSelectedTeam(game.home.alias)}>
+        {game.home.alias}
       </Button>
       <CardActions>
         <Box
