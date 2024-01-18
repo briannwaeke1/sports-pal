@@ -1,10 +1,10 @@
 "use client";
 import { useState } from "react";
 import { Box, Typography, CardActions, Card, Button } from "@mui/joy";
-import { NBAGame } from "@/lib/types";
 import styles from "./game-card.module.css";
+import { GameCardProps } from "./game-card.types";
 
-export const GameCard = ({ game }: { game: NBAGame }) => {
+export const GameCard = ({ game }: GameCardProps) => {
   const [selectedTeam, setSelectedTeam] = useState<string | null>(null);
 
   return (
@@ -16,6 +16,7 @@ export const GameCard = ({ game }: { game: NBAGame }) => {
       >
         {game.away.name} @ {game.home.name}
       </Typography>
+
       <Button onClick={() => setSelectedTeam(game.away.alias)}>
         {game.away.alias}
       </Button>

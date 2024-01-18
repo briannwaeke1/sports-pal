@@ -45,9 +45,8 @@
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(25%, auto));
+  grid-template-columns: repeat(4, 1fr);
   max-width: 100%;
-  width: var(--max-width);
   gap: 2rem;
 }
 
