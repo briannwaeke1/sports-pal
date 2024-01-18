@@ -1,9 +1,10 @@
 "use client";
 import { useState } from "react";
 import { Box, Typography, CardActions, Card, Button } from "@mui/joy";
+import { NBAGame } from "@/lib/types";
 import styles from "./game-card.module.css";
 
-export const GameCard = ({ game }: { game: any }) => {
+export const GameCard = ({ game }: { game: NBAGame }) => {
   const [selectedTeam, setSelectedTeam] = useState<string | null>(null);
 
   return (
