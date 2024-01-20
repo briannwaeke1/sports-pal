@@ -1,7 +1,7 @@
 /**
- *
+ * This function is responsible for fetching the scheduled games from the API
  * @param currentDate
- * @returns {Promise} - a promise that resolves to the nba games data from the API
+ * @returns {Promise} - Promise object represents the scheduled games
  */
 
 import { NBAScheduleResponse } from "./types";

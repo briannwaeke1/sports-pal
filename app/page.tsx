@@ -1,24 +1,16 @@
-import { GameCard } from "@/components/game-card";
+import { GamesGrid } from "@/components/games-grid";
 import Typography from "@mui/joy/Typography";
-import { NBAGame } from "@/lib/types";
-import { formatDate } from "@/lib/formatDate";
-import { getScheduledGames } from "@/lib/getScheduledGames";
-import styles from "./page.module.css";
+import styles from "./page.module.scss";
 
-const Page = async () => {
-  const scheduledGames = await getScheduledGames(formatDate());
+export default function Home() {
   return (
-    <main className={styles.main}>
+    <main className={styles.container}>
       <div className={styles.pageTitle}>
-        <Typography level="h1">Scheduled NBA Games</Typography>
+        <Typography level="h1">
+          Scheduled NBA Games {new Date().toLocaleDateString()}
+        </Typography>
       </div>
-      <div className={styles.grid}>
-        {scheduledGames.games.map((game: NBAGame) => (
-          <GameCard game={game} key={game.id} />
-        ))}
-      </div>
+      <GamesGrid />
     </main>
   );
-};
-
-export default Page;
+}
