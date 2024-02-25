@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.scss";
 import ThemeRegistry from "./ThemeRegistry";
+import { Header } from "@/components/header/header";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,7 +16,10 @@ const RootLayout = ({ children }: { children: ReactNode }) => {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <ThemeRegistry options={{ key: "joy" }}>{children}</ThemeRegistry>
+        <ThemeRegistry options={{ key: "joy" }}>
+          <Header />
+          {children}
+        </ThemeRegistry>
       </body>
     </html>
   );

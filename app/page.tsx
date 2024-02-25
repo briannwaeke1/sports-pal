@@ -1,16 +1,18 @@
 import { GamesGrid } from "@/components/games-grid";
-import Typography from "@mui/joy/Typography";
 import styles from "./page.module.scss";
+import { Box, Typography } from "@mui/joy";
 
-export default function Home() {
+const Page = () => {
   return (
     <main className={styles.container}>
-      <div className={styles.pageTitle}>
-        <Typography level="h1">
-          Scheduled NBA Games {new Date().toLocaleDateString()}
+      <Box className={styles.pageTitle}>
+        <Typography level="title-lg" className={styles.pageTitleText}>
+          NBA SCHEDULE - {new Date().toLocaleDateString()}
         </Typography>
-      </div>
+      </Box>
       <GamesGrid />
     </main>
   );
-}
+};
+
+export default Page;

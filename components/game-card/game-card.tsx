@@ -18,22 +18,25 @@ export const GameCard = ({ game }: GameCardProps) => {
   return (
     <Card className={styles.card}>
       <CardContent>
-        <Typography className={styles.gameTitle}>
-          {game.away.name} @ {game.home.name}
+        <Typography level="h3" className={styles.gameTitle}>
+          {game.AwayTeam} @ {game.HomeTeam}
         </Typography>
       </CardContent>
       <CardOverflow sx={{ bgcolor: "background.level1" }}>
         <CardActions buttonFlex="1">
           <ToggleButtonGroup
             variant="outlined"
+            color="primary"
             value={selectedTeam}
-            onChange={(event, newTeam) => {
-              setSelectedTeam(newTeam);
+            onChange={(event, newValue) => {
+              setSelectedTeam(newValue);
             }}
             className={styles.teamButton}
+            sx={{ width: "100%" }}
+            disabled={game.Status !== "Scheduled"}
           >
-            <Button value={game.away.alias}>{game.away.alias}</Button>
-            <Button value={game.home.alias}>{game.home.alias}</Button>
+            <Button value="away">{game.AwayTeam}</Button>
+            <Button value="home">{game.HomeTeam}</Button>
           </ToggleButtonGroup>
         </CardActions>
       </CardOverflow>

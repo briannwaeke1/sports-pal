@@ -1,5 +1,5 @@
-import { NBAGame } from "@/lib/types";
+import { GameDetails } from "@/lib/types";
 
 export interface GameCardProps {
-  game: NBAGame;
+  game: GameDetails;
 }
