@@ -14,7 +14,6 @@ import styles from "./game-card.module.scss";
 
 export const GameCard = ({ game }: GameCardProps) => {
   const [selectedTeam, setSelectedTeam] = useState<string | null>(null);
-
   return (
     <Card className={styles.card}>
       <CardContent>

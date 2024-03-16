@@ -21,11 +21,12 @@
     ],
     "paths": {
       "@/*": ["./*"],
-      "@/components/*": ["components/*"],
+      "@/components/*": ["app/_components/*"],
       "@/app/*": ["app/*"],
       "@/lib/*": ["lib/*"],
-
-      
+      "@/server/*": ["server/*"],
+      "@/styles/*": ["styles/*"],
+      "@/trpc/*": ["app/_trpc/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

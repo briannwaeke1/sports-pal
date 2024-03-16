@@ -1,4 +1,4 @@
-import { GamesGrid } from "@/components/games-grid";
+import { GamesGrid } from "@/app/_components/games-grid";
 import styles from "./page.module.scss";
 import { Box, Typography } from "@mui/joy";
 

@@ -3,7 +3,9 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.scss";
 import ThemeRegistry from "./ThemeRegistry";
-import { Header } from "@/components/header/header";
+import { Header } from "@/app/_components/header/header";
+import TrpcProvider from "@/trpc/trpc-provider";
+import { ClerkProvider } from "@clerk/nextjs";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,14 +16,18 @@ export const metadata: Metadata = {
 
 const RootLayout = ({ children }: { children: ReactNode }) => {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <ThemeRegistry options={{ key: "joy" }}>
-          <Header />
-          {children}
-        </ThemeRegistry>
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en">
+        <body className={inter.className}>
+          <ThemeRegistry options={{ key: "joy" }}>
+            <TrpcProvider>
+              <Header />
+              {children}
+            </TrpcProvider>
+          </ThemeRegistry>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 };
 
